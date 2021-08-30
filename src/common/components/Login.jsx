@@ -6,6 +6,7 @@ import { setMsgLogin, setSignUp } from '../../redux/actions';
 
 import Footer from './Footer';
 import Header from './Header';
+import LoginDash from './animations/LoginDash';
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ export default function Login() {
       <h1 className="goLoginTitle">Para continuar, efetue o acesso a sua conta GoShoes</h1>
       <br />
       <div className="cartLogin">
-        {/* <GoLoginDash /> */}
+        <LoginDash />
         <Link to="/profile">
           <button
             type="button"
