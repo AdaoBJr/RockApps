@@ -1,6 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import ALink from 'react-anchor-link-smooth-scroll';
 
 import { BiToggleLeft, BiToggleRight } from 'react-icons/bi';
 import { HiSun } from 'react-icons/hi';
