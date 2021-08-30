@@ -77,3 +77,34 @@ export const AddPhotoToUsers = (users, photo) => {
 };
 
 // ----------------------------------------------------------------------------------------------
+// CARRINHO DE COMPRAS
+
+// ADD, REMOVE, UPDATE CART
+export const CarT = (product, cart, add) => {
+  const {
+    id, title, thumbnail, price, available_quantity: availableQuantity, attributes,
+  } = product;
+  const findProduct = cart.find((item) => item.id === product.id);
+  if (!cart.length || !findProduct) {
+    const productCart = [...cart, {
+      id, title, thumbnail, price, availableQuantity, attributes, count: 1, totalValue: price,
+    }];
+    setStorage('LScart', productCart);
+    return productCart;
+  }
+  let productCart = [...cart];
+  const key = productCart.indexOf(findProduct);
+
+  if (add) { productCart[key].count += 1; }
+  if (!add && productCart[key].count >= 1) { productCart[key].count -= 1; }
+
+  productCart[key].totalValue = Math.round((productCart[key].count
+      * productCart[key].price) * 100) / 100;
+
+  if (!add && productCart[key].count === 0) { productCart = removeItem(id, cart); }
+
+  setStorage('LScart', productCart);
+  return productCart;
+};
+
+// ----------------------------------------------------------------------------------------------
