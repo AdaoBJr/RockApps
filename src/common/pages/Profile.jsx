@@ -13,6 +13,8 @@ import { AddToUsers } from '../../functions';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Logout from '../components/profile/Logout';
+import LoginDash from '../components/animations/LoginDash';
 
 const initialLogin = {
   LuserName: '',
@@ -39,7 +41,7 @@ export default function Profile() {
   const { Lemail, Lpassword } = login;
   const {
     user: {
-      /* logIn, */ msgLoginError, msgLoginNotExist, signUp, users,
+      logIn, msgLoginError, msgLoginNotExist, signUp, users,
     },
   } = useSelector((state) => state);
 
@@ -136,7 +138,7 @@ export default function Profile() {
   const renderLogin = () => (
     <div className="login">
       <div className="loginAnim">
-        {/* <GoLoginDash page="login" /> */}
+        <LoginDash page="login" />
       </div>
 
       <div className="loginForms">
@@ -268,7 +270,7 @@ export default function Profile() {
   useEffect(validationEmailPwd, [Remail, Rpassword, Lemail, Lpassword]);
 
   // ------------------------------------------------------------------------------------------
-  // if (logIn) { return <GoLogout />; }
+  if (logIn) { return <Logout />; }
   return (
     <>
       <Header />
