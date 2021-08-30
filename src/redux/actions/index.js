@@ -1,3 +1,5 @@
+import getAPI from '../../services';
+
 // USER ------------------------------------------------------------------------------------------
 export const ADD_LOGIN = 'ADD_LOGIN'; // ACTION -> ADD_LOGIN
 export const addLogin = (users) => ({ // ACTION-CREATOR -> addLogin
@@ -68,6 +70,45 @@ export const SET_SCREEN_PROFILE = 'SET_SCREEN_PROFILE'; // ACTION -> SET_SCREEN_
 export const SET_SCREEN_DETAILS = 'SET_SCREEN_DETAILS'; // ACTION -> SET_SCREEN_DETAILS
 export const SET_THEME = 'SET_THEME'; // ACTION -> SET_THEME
 export const OPEN_FILTER_MENU = 'OPEN_FILTER_MENU'; // ACTION -> OPEN_FILTER_MENU
+
+// PRODUCTS ---------------------------------------------------------------------------------------
+
+export const ADD_PRODUCT = 'ADD_PRODUCT'; // ACTION -> ADD_PRODUCT
+export const addProduct = (products) => ({ // ACTION-CREATOR -> addProduct
+  type: ADD_PRODUCT, payload: { products },
+});
+
+export const ADD_FILTERED_PROD = 'ADD_FILTERED_PROD'; // ACTION -> ADD_FILTERED_PROD
+export const addFilteredProd = (filteredProd) => ({ // ACTION-CREATOR -> addFilteredProd
+  type: ADD_FILTERED_PROD, payload: { filteredProd },
+});
+
+// Fetch Thunk
+
+// Thunk com Async / Await
+export function getProducts() {
+  return async (dispatch) => {
+    const products = await getAPI();
+    try {
+      return dispatch(addProduct(products.results));
+    } catch (error) {
+      return dispatch(addProduct(error.message));
+    }
+  };
+}
+
+// Thunk com Then
+// export const getProducts = () => (dispatch) => {
+//   getAPI()
+//     .then((products) => dispatch(
+//       addProduct(products.results),
+//     ));
+// };
+
+export const SET_FAVORITE = 'SET_FAVORITE'; // ACTION -> SET_FAVORITE
+export const setFav = (favorited) => ({ // ACTION-CREATOR -> SET_FAVORITE
+  type: SET_FAVORITE, payload: { favorited },
+});
 
 // CART ---------------------------------------------------------------------------------------
 
