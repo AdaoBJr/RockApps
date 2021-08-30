@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { setMsgLogin, setSignUp } from '../../../redux/actions';
 
-import Footer from '../Footer';
-import Header from '../Header';
+import Footer from '../general/Footer';
+import Header from '../general/Header';
 import LoginDash from '../animations/LoginDash';
 
 export default function Login() {

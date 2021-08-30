@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 import { RiLogoutBoxRFill } from 'react-icons/ri';
 import { addLogin, setLogOut } from '../../../redux/actions';
 
-import Footer from '../Footer';
+import Footer from '../general/Footer';
 import LoginDash from '../animations/LoginDash';
-import Header from '../Header';
+import Header from '../general/Header';
 import confete from '../../../files/images/confete.png';
 import iconPerfil from '../../../files/images/iconPerfil.png';
 import ProfileHeader from './ProfileHeader';

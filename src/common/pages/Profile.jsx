@@ -11,8 +11,8 @@ import {
 } from '../../redux/actions';
 import { AddToUsers } from '../../functions';
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../components/general/Header';
+import Footer from '../components/general/Footer';
 import Logout from '../components/profile/Logout';
 import LoginDash from '../components/animations/LoginDash';
 
