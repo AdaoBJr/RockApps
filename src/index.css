@@ -199,3 +199,342 @@ button {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2),
               0 -2px 5px rgba(0, 0, 0, 0.2);
 }
+
+/*========== HEADER ==========*/
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--body-color);
+}
+
+.bgHeaderLight {
+  box-shadow: 0 3px 12px rgba(65,11,16,.15);
+}
+
+.bgHeaderDark {
+  box-shadow: 0 3px 5px rgba(239, 236, 244, 0.2);
+}
+
+.display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.numCount {
+  z-index: var(--z-element2);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-bold);
+  text-align: center;
+  color: var(--title-home-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2),
+              0 -2px 5px rgba(0, 0, 0, 0.2);
+  min-width: 1.5rem;
+  padding: 1px 3px;
+  margin: 0 2px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.numCount:hover {
+  color: var(--container-color);
+  background-color: var(--first-color-darken);
+}
+
+.showNumCount {
+  opacity: 1;
+  bottom: 1.5rem;
+  animation-duration: .5s;
+  animation-name: animate-num_cart;
+}
+
+@keyframes animate-num_cart {
+  0%{
+    transform: scale(1,1);
+  }
+  50%{
+    transform: scale(1.2,1.2);
+  }
+  100%{
+    transform: scale(1,1);
+  }
+}
+
+.filterBtn {
+  position: absolute;
+  right: 3.3rem;
+  top: 5.5rem;
+  color: var(--title-home-color-dark);
+  transition: .5s;
+}
+
+.filterBtn:hover {
+  color: var(--first-color);
+}
+
+.openFilterMenu {
+  position: fixed;
+  top: calc( var(--header-height) + 3rem);
+  right: -100%;
+  width: 350px;
+  height: 80%;
+  padding: 0 0.6rem;
+  border-radius: .5rem;
+  color: var(--body-color);
+  backdrop-filter: blur(10px);
+  z-index: var(--z-fixed);
+  transition: .5s;
+  box-shadow: 0 4px 10px rgba(239, 236, 244, 0.2),
+              0 -4px 10px rgba(239, 236, 244, 0.2);
+}
+
+.menuLight {
+  background-color: rgba(4, 4, 4, 0.6);
+}
+
+.menuDark {
+  background-color: rgba(255,255,255,.3);
+}
+
+.showFilter {
+  right: 1rem;
+}
+
+.titleFilter {
+  font-size: 1.2rem;
+  margin: 3rem 0 0;
+  padding: 0.6rem 0;
+  text-align: center;
+  border-radius: 1rem 1rem 0 0;
+  color: var(--first-color);
+  background-color: rgba(255,255,255,.3);
+}
+
+.menuFilter {
+  display: grid;
+  border-radius: 0 0 1rem 1rem;
+  background-color: rgba(255,255,255,.3);
+  
+}
+
+.filterName {
+  text-align: center;
+  padding: 0.1rem 0;
+  border-radius: 0.8rem;
+  transition: .5s;
+  cursor: pointer;
+}
+
+.filterName:hover {
+  color: var(--title-home-color-dark);
+  background-color: var(--container-color);
+  transform: scale(1.05);
+}
+
+.btnFilterOn {
+  color: green;
+}
+
+.btnFilterOn, .btnFilterOff {
+  font-size: 2rem;
+  vertical-align: middle;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+.btnFilterLeft {
+  font-size: 1.6rem;
+  vertical-align: middle;
+}
+
+.filterMenuDash {
+  width: 260px;
+  margin-top: var(--mb-5);
+  margin-left: var(--mb-5);
+}
+
+/*========== NAV ==========*/
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px){
+  .navMenu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    right: 0;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2.5rem 0 0;
+    text-align: center;
+    background-color: var(--body-color);
+    transition: .4s;
+    box-shadow: 0 0 4px rgba(0,0,0,.1);
+    border-radius: 2rem;
+    z-index: var(--z-fixed);
+  }
+}
+
+.navItem {
+  margin-bottom: var(--mb-3);
+}
+
+.navLink, .navLogo {
+  color: var(--title-home-color-dark);
+  font-weight: var(--font-semi-bold);
+  transition: .3s;
+}
+
+.navLink:hover, .navLogo:hover {
+  color: var(--first-color);
+}
+
+.icon {
+  opacity: 1;
+  position: absolute;
+  top: 15px;
+  right: 0px;
+  width: 40px;
+  height: 25px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.hamburguer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 2px;
+  border-radius: 1rem;
+  background-color: var(--title-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.hamburguer:before {
+  content: '';
+  position: absolute;
+  margin-top: 20%;
+  right: 0;
+  top: -12px;
+  width: 27px;
+  height: 2px;
+  border-radius: 1rem;
+  background-color: var(--title-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.hamburguer:after {
+  content: '';
+  position: absolute;
+  margin-top: -20%;
+  right: 0;
+  top: 12px;
+  width: 27px;
+  height: 2px;
+  border-radius: 1rem;
+  background-color: var(--title-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.iconActive .hamburguer {
+  background: transparent;
+  box-shadow: 0 2px 5px transparent;
+}
+
+.iconActive .hamburguer:before {
+  top: -6px;
+  background-color: var(--title-color);
+  transform: rotate(225deg);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.iconActive .hamburguer:after {
+  top: 2px;
+  background-color: var(--title-color);
+  transform: rotate(135deg);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Show menu */
+.show {
+  top: calc(var(--header-height) + 1rem);
+}
+
+/* Active menu link */
+.activeLink {
+  position: relative;
+}
+
+.activeLink::before {
+  content: '';
+  position: absolute;
+  bottom: -.75rem;
+  left: 45%;
+  width: 5px;
+  height: 5px;
+  background-color: var(--title-color);
+  border-radius: 50%;
+}
+
+/* Scroll top */
+.scrolltop {
+  position: fixed;
+  right: 1rem;
+  bottom: -20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .3rem;
+  background: rgba(218,37,53,.5);
+  border-radius: .4rem;
+  z-index: var(--z-element1);
+  opacity: 0;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.scrolltop:hover {
+  background-color: var(--first-color);
+}
+
+.scrolltopIcon {
+  font-size: 2rem;
+  color: var(--body-color);
+}
+
+.showScroll {
+  opacity: 1;
+  bottom: 1.5rem;
+  animation-duration: .5s;
+  animation-delay: .5s;
+  animation-name: animate-scroll;
+}
+
+@keyframes animate-scroll {
+  0%{
+    transform: scale(1,1);
+  }
+  50%{
+    transform: scale(1.2,1.2);
+  }
+  100%{
+    transform: scale(1,1);
+  }
+}
