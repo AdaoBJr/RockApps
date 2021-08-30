@@ -25,8 +25,36 @@ export const removeItem = (id, arrayData) => {
   return removedItem;
 };
 
-// ----------------------------------------------------------------------------------------------
+// FUNÇÃO DE DELIMITAR TAMANHO DO TÍTULO
+export const threeWordsTitle = (title) => {
+  const newName = `${title.split(' ')[0]} ${title.split(' ')[1]} ${title.split(' ')[2]}`;
+  return newName;
+};
 
+// ----------------------------------------------------------------------------------------------
+// SET FAVORITOS
+
+export const Fav = (product, favorited) => {
+  const {
+    id, title, thumbnail, price, available_quantity: availableQuantity, attributes,
+  } = product;
+  const favorite = [...favorited];
+
+  const findFav = favorite.find((item) => item.id === id);
+  if (!favorite.length || !findFav) {
+    const newFav = [...favorite, {
+      id, title, thumbnail, price, availableQuantity, attributes,
+    }];
+    setStorage('LSfav', newFav);
+    return newFav;
+  }
+  // const newFav = favorited.filter((fav) => fav.id !== id);
+  const newFav = removeItem(id, favorited);
+  setStorage('LSfav', newFav);
+  return newFav;
+};
+
+// ----------------------------------------------------------------------------------------------
 // LOGIN
 
 export const AddToUsers = (register, users, Email) => {
