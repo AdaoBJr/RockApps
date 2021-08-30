@@ -135,6 +135,14 @@ export const CarT = (product, cart, add) => {
   return productCart;
 };
 
+// TOTAL VALUE CART
+export const sumCart = (cart) => {
+  const total = cart.reduce((acc, currCart) => acc + currCart.totalValue, 0);
+  const totalCarT = Math.round((total) * 100) / 100;
+  setStorage('LScartSum', totalCarT);
+  return totalCarT;
+};
+
 // ----------------------------------------------------------------------------------------------
 // REDUCERS
 
