@@ -1,0 +1,201 @@
+/*===== FONTS =====*/
+@font-face {
+  font-family: 'PoetsenOne';
+  src: url('./files/fonts/PoetsenOne.ttf');
+}
+
+/*===== VARIABLES CSS =====*/
+:root {
+  --header-height: 3rem;
+  --heart-height: 45px;
+  --footer-height: 4rem;
+
+  /*========== Colors ==========*/
+  --first-color: #DA2535;
+  --first-color-dark: #C42130;
+  --first-color-darken: #DE3B49;
+  --title-color: #161212;
+  --title-home-color: #5361FF;
+  --title-home-color-dark: #5361FF;
+  --text-color: #5B5757;
+  --text-color-light: #8F8A8A;
+  --body-color: #FEFBFB;
+  --container-color: #FFF;
+
+  /*========== Font and typography ==========*/
+  --body-font: 'PoetsenOne', sans-serif; 
+  --biggest-font-size: 2rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+
+  /*========== Font weight ==========*/
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /*========== Margins ==========*/
+  --mb-1: .5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+  --mb-7: 5rem;
+  --mb-8: 8rem;
+  /*========== z index ==========*/
+
+  --z-element1: 1;
+  --z-element2: 2;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 968px){
+  :root{
+    --biggest-font-size: 3rem;
+    --h2-font-size: 1.75rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+  }
+}
+
+/*========== BASE ==========*/
+*,::before,::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*========== Variables Dark theme ==========*/
+body.darkTheme {
+  --first-color-darken: #161212;
+  --title-color: #F3F1F1;
+  --title-home-color-dark: #F3F1F1;
+  --text-color: #D1C7C8;
+  --body-color: #251D1E;
+  --container-color: #302728;
+}
+
+/*========== Button Dark/Light ==========*/
+.changeTheme {
+  position: absolute;
+  right: 1.5rem;
+  top: 2.2rem;
+  display: flex;
+  color: var(--title-home-color-dark);
+  font-size: 2rem;
+  transition: .5s;
+}
+
+.changeTheme:hover {
+  color:var(--first-color)
+}
+
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+h1,h2,h3,ul,li,p {
+  margin: 0;
+}
+
+h1,h2,h3{
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+}
+
+ul, li {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  border: none;
+  background: inherit;
+  border-radius: inherit;
+}
+
+/*========== CLASS CSS ==========*/
+.section {
+  padding: 4rem 0 2rem;
+}
+
+.sectionTitle {
+  position: relative;
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
+  text-align: center;
+  margin-top: var(--mb-5);
+  margin-bottom: var(--mb-5);
+}
+
+.sectionTitle:after, .collectionTitle::after {
+  position: absolute;
+  content: "";
+  width: 80px;
+  height: .22rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 2.5rem;
+  background-color: var(--first-color);
+}
+
+.collectionTitle {
+  position: relative;
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: var(--mb-5);
+}
+
+/*========== LAYOUT ==========*/
+.main {
+  overflow: hidden;
+}
+
+.bdContainer{
+  max-width: 968px;
+  width: calc(100% - 3rem);
+  margin-left: var(--mb-3);
+  margin-right: var(--mb-3);
+}
+
+.bdGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.bgLoading {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  /* margin: 3rem auto; */
+  /* width: 90vw;
+  height: 90vh; */
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--first-color-darken);
+  /* border-radius: 8rem; */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2),
+              0 -2px 5px rgba(0, 0, 0, 0.2);
+}
