@@ -1415,3 +1415,48 @@ button {
   transition: 0.5s;
 }
 
+/*========== FOOTER ==========*/
+.footer {
+  margin-top: 10rem;
+}
+
+.footerContainer {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.footerTitle {
+  margin-bottom: var(--mb-2);
+  font-size: var(--h3-font-size);
+}
+
+.footerLink {
+  display: inline-block;
+  margin-bottom: .75rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.footerLink:hover {
+  color: var(--title-home-color);
+}
+
+.footerSocial {
+  font-size: 1.5rem;
+  color: var(--title-color);
+  margin-right: var(--mb-3);
+  cursor: pointer;
+  transition: .5s;
+}
+
+.footerSocial:hover {
+  transform: scale(1.50);
+  color: var(--first-color);
+}
+
+.footerCopy {
+  text-align: center;
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+  margin-top: 4rem;
+}
+
