@@ -1036,6 +1036,7 @@ button {
 .topDetails {
   display: grid;
   height: max-content;
+  background-color: var(--container-color);
   overflow: hidden;
   padding-bottom: 25px;
 }
