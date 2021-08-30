@@ -2,11 +2,11 @@ import React from 'react';
 import { FaArrowAltCircleRight } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { setMsgLogin, setSignUp } from '../../redux/actions';
+import { setMsgLogin, setSignUp } from '../../../redux/actions';
 
-import Footer from './Footer';
-import Header from './Header';
-import LoginDash from './animations/LoginDash';
+import Footer from '../Footer';
+import Header from '../Header';
+import LoginDash from '../animations/LoginDash';
 
 export default function Login() {
   const dispatch = useDispatch();
