@@ -1,8 +1,8 @@
-// import { setShip } from '../../functions';
+import { setShip } from '../../functions';
 import {
   SET_SCREEN_HOME, SET_SCREEN_FAV, SET_SCREEN_CART, SET_SCREEN_PROFILE,
   SET_SCREEN_DETAILS, SET_FETCHON_DONE, SET_DONE_LOADING, SET_THEME,
-  OPEN_FILTER_MENU, HIGH_FILTER, LOW_FILTER,
+  OPEN_FILTER_MENU, HIGH_FILTER, LOW_FILTER, SHIP_FILTER,
 } from '../actions';
 
 export const SCREEN = {
@@ -125,14 +125,14 @@ const screenReducer = (state = SCREEN, { type, payload }) => { // Desestruturaç
         highFilter: false,
       };
     }
-    // case SHIP_FILTER: {
-    //   const { filterOn, shipFilter } = setShip(state, payload.filterOn);
-    //   return {
-    //     ...state,
-    //     filterOn,
-    //     shipFilter,
-    //   };
-    // }
+    case SHIP_FILTER: {
+      const { filterOn, shipFilter } = setShip(state, payload.filterOn);
+      return {
+        ...state,
+        filterOn,
+        shipFilter,
+      };
+    }
     default:
       return state;
   }

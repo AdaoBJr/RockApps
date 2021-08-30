@@ -117,4 +117,19 @@ export const addCart = (cart) => ({ // ACTION-CREATOR -> ADD_PRODUCTS
   type: ADD_CART, payload: { cart },
 });
 
+export const ADD_TOTAL_CART = 'ADD_TOTAL_CART'; // ACTION -> ADD_TOTAL_CART
+export const addTotalCart = (totalCart) => ({ // ACTION-CREATOR -> ADD_TOTAL_CART
+  type: ADD_TOTAL_CART, payload: { totalCart },
+});
+
+export const SET_COMPLETE_BUY = 'SET_COMPLETE_BUY'; // ACTION -> SET_COMPLETE_BUY
+export const setCompleteBuy = (buyCompleted) => ({ // ACTION-CREATOR -> setCompleteBuy
+  type: SET_COMPLETE_BUY, payload: { buyCompleted },
+});
+
+export const ADD_DATA_CARD = 'ADD_DATA_CARD'; // ACTION -> ADD_DATA_CARD
+export const addDataCard = ({ target: { name, value } }, Focus) => ({
+  type: ADD_DATA_CARD, payload: { name, value, Focus },
+});
+
 // -------------------------------------------------------------------------------------------------
