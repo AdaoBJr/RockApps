@@ -1537,3 +1537,43 @@ button {
   color: #FFF;
 }
 
+/*========== PURCHASED ==========*/
+.checkoutTitle {
+  position: relative;
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: var(--mb-5);
+}
+
+.itemsBought {
+  display: grid;
+  justify-content: flex-end;
+}
+
+.purchasedCategory {
+  font-size: var(--small-font-size);
+  margin-bottom: var(--mb-1);
+  color: var(--text-color-light);
+}
+
+.purchasedAnimation {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.purchasedBack {
+  font-size: var(--h3-font-size);
+  color: var(--title-color);
+  cursor: pointer;
+  transition: .5s;
+}
+
+.purchasedBack:hover {
+  color: var(--title-home-color);
+}
+
+.checkoutDashboard {
+  width: 650px;
+}
