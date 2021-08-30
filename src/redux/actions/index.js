@@ -1,4 +1,38 @@
-// LOGIN ------------------------------------------------------------------------------------------
+// USER ------------------------------------------------------------------------------------------
+export const ADD_LOGIN = 'ADD_LOGIN'; // ACTION -> ADD_LOGIN
+export const addLogin = (users) => ({ // ACTION-CREATOR -> addLogin
+  type: ADD_LOGIN, payload: { users },
+});
+
+export const SET_SIGN_UP = 'SET_SIGN_UP'; // ACTION -> SET_SIGN_UP
+export const setSignUp = () => ({ // ACTION-CREATOR -> setSignUp
+  type: SET_SIGN_UP,
+});
+
+export const SET_MSG_LOGIN = 'SET_MSG_LOGIN'; // ACTION -> SET_MSG_LOGIN
+export const setMsgLogin = (msgLogin) => ({ // ACTION-CREATOR -> setMsgLogin
+  type: SET_MSG_LOGIN, payload: { msgLogin },
+});
+
+export const SET_MSG_LOGIN_OK = 'SET_MSG_LOGIN_OK'; // ACTION -> SET_MSG_LOGIN_OK
+export const setMsgLogInOK = (logIn, msgLoginOK) => ({ // ACTION-CREATOR -> setMsgLogInOK
+  type: SET_MSG_LOGIN_OK, payload: { logIn, msgLoginOK },
+});
+
+export const SET_MSG_LOGIN_ERROR = 'SET_MSG_LOGIN_ERROR'; // ACTION -> SET_MSG_LOGIN_ERROR
+export const setMsgLoginError = (msgLoginError, msgLoginNotExist) => ({
+  type: SET_MSG_LOGIN_ERROR, payload: { msgLoginError, msgLoginNotExist },
+});
+
+export const SET_LOG_IN = 'SET_LOG_IN'; // ACTION -> SET_LOG_IN
+export const setLogIn = (logIn) => ({ // ACTION-CREATOR -> setLogIn
+  type: SET_LOG_IN, payload: { logIn },
+});
+
+export const SET_LOG_OUT = 'SET_LOG_OUT'; // ACTION -> SET_LOG_OUT
+export const setLogOut = () => ({ // ACTION-CREATOR -> setLogOut
+  type: SET_LOG_OUT,
+});
 
 // SCREEN ---------------------------------------------------------------------------------------
 
