@@ -997,3 +997,107 @@ button {
 .numPage:hover, .arrowPage:hover, .atualPg {
   background-color: var(--first-color-darken);
 }
+
+/*========== SHOES DETAILS ==========*/
+
+.shoesDetails {
+  display: grid;
+  justify-content: center;
+}
+
+.box {
+  margin-top: calc(var(--header-height) + 3rem);
+  height: max-content;
+  width: 100vw;
+  box-shadow: 0 12px 18px -6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  max-width: 70rem;
+}
+
+.btnHome {
+  position: relative;
+  z-index: 99;
+  left: -10rem;
+  font-size: 2rem;
+  color: var(--first-color);
+  box-shadow: 0 2px 10px rgba(35,0,77,.2);
+  padding: 8px 8px 3px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.btnHome:hover {
+  color:var(--first-color-dark);
+  box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, .3);
+}
+
+.topDetails {
+  display: grid;
+  height: max-content;
+  overflow: hidden;
+  padding-bottom: 25px;
+}
+
+.titleDetails {
+  margin: 25px;
+  justify-self: center;
+  z-index: 1;
+  width: 90vw;
+  background-color: var(--container-color);
+  padding: 2rem 1rem;
+  border-radius: 40px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(35,0,77,.2);
+  animation-duration: .4s;
+  animation-name: animate-login;
+}
+
+@keyframes animate-login {
+  0%{
+    transform: scale(1,1);
+  }
+  50%{
+    transform: scale(1.1,1.1);
+  }
+  100%{
+    transform: scale(1,1);
+  }
+}
+
+.titleCategory, .ingredients h3 {
+  font-size: var(--h3-font-size);
+}
+
+.ingredients h3 {
+  margin-top: var(--mb-3);
+}
+
+.imageButtons {
+  justify-self: center;
+  margin-top: -3rem;
+}
+
+.imageButtons .detailsImage {
+  width: 86vw;
+  border-radius: 0 0 40px 40px;
+  filter: drop-shadow(5px 10px 15px rgba(8,9,13,.4));
+  margin-bottom: 1.5rem;
+}
+
+.imageButtons .favCartBtns {
+  display: flex;
+  justify-content: space-around;
+  width: 250px;
+  height: 70px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(35,0,77,.2);
+}
+
+.imageButtons .favCartBtns:hover {
+  box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, .3);
+}
+
