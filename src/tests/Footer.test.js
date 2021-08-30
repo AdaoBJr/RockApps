@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { screen } from '@testing-library/react';
-import Footer from '../common/components/Footer';
+import Footer from '../common/components/general/Footer';
 
 import renderWithRouter from '../services/renderWithRouter';
 

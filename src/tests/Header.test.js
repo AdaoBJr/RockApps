@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import '@testing-library/jest-dom';
 import configureStore from 'redux-mock-store';
-import Header from '../common/components/Header';
+import Header from '../common/components/general/Header';
 import renderWithRouter from '../services/renderWithRouter';
 
 const initialState = {
