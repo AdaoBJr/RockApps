@@ -1,11 +1,22 @@
+import React from 'react';
+import { Provider } from 'react-redux';
 import '@testing-library/jest-dom';
+import configureStore from 'redux-mock-store';
 import CartFooter from '../common/components/cart/CartFooter';
 
 import renderWithRouter from '../services/renderWithRouter';
 
+const initialState = {
+  cart: { cart: [], updateSum: false, totalCart: 0 },
+};
+
 describe('Testando toda a aplicação do Componente CartFooter', () => {
+  const mockStore = configureStore();
+  let store;
+
   it('Verifica se os botões aparecem no CartFooter', () => {
-    const { getByRole } = renderWithRouter(<CartFooter />);
+    store = mockStore(initialState);
+    const { getByRole } = renderWithRouter(<Provider store={store}><CartFooter /></Provider>);
 
     const btnClear = getByRole('button', {
       name: /Limpar Carrinho/i,
